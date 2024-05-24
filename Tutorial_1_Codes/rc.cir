@@ -1,1 +1,26 @@
+RC_Circuit_Simulations
+
+.global gnd vdd
+
+
+
+R1 in out 1k
+C1 out 0 1n
+
+*INPUT_PULSE
+vin in 0 pulse 0 5 0ns 100ns 100ns 10us 20us
+
+*Type of analysis
+.tran 10n 60u
+
+.control
+run
+plot v(in) v(out)
+
+
+*setting_BG_colour
+set color0 = white
+set color1 = black
+set xbrushwidth = 10
+.endc
 
